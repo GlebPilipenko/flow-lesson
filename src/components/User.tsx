@@ -4,8 +4,8 @@ import {UserType} from 'types';
 export const User: FC<UserType> = memo(({id, name}) => {
   return (
     <div>
-      <div>{id}</div>
-      <div>{name}</div>
+      <div>Name: {name}</div>
+      <div>Id: {id}</div>
     </div>
   );
 });
