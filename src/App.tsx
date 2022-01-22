@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {Fragment, useCallback, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectUsers, selectUsersCount} from 'store/selectors';
 import {createUser, plusUserCount} from 'store/actions';
@@ -6,6 +6,8 @@ import {v1} from 'uuid';
 import {CustomButton, UsersCountValue} from 'components';
 import {UsersList} from 'components/UsersList';
 import {generateRandomName} from 'utils';
+
+type SetTimeoutType = ReturnType<typeof setTimeout>;
 
 const DELAY = 500;
 
@@ -18,7 +20,7 @@ export const App = () => {
   const [isAddNewUser, setIsAddNewUser] = useState<boolean>(false);
 
   useEffect(() => {
-    let timeoutId = setTimeout(() => {
+    let timeoutId: SetTimeoutType = setTimeout((): void => {
       setIsAddNewUser(false);
     }, DELAY);
 
@@ -38,12 +40,12 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <Fragment>
       <UsersCountValue usersCount={usersCount} />
 
       <CustomButton title="Click Me" isButtonDisabled={isAddNewUser} onClick={handleClick} />
 
       <UsersList users={users} />
-    </div>
+    </Fragment>
   );
 };
