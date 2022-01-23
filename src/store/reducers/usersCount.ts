@@ -2,7 +2,6 @@ import {plusUserCount} from 'store/actions';
 
 const initState = {
   count: 0,
-  questions: {isSamurai: true},
 };
 
 type InitStateType = typeof initState;

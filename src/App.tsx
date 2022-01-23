@@ -1,6 +1,6 @@
 import React, {Fragment, useCallback, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectQuestions, selectUsers, selectUsersCount} from 'store/selectors';
+import {selectUsers, selectUsersCount} from 'store/selectors';
 import {createUser, plusUserCount} from 'store/actions';
 import {v1} from 'uuid';
 import {CustomButton, UsersCountValue} from 'components';
@@ -15,7 +15,6 @@ export const App = () => {
   const dispatch = useDispatch();
 
   const users = useSelector(selectUsers);
-  const questions = useSelector(selectQuestions);
   const usersCount = useSelector(selectUsersCount);
 
   const [isAddNewUser, setIsAddNewUser] = useState<boolean>(false);
@@ -46,7 +45,6 @@ export const App = () => {
 
       <CustomButton
         title="Click Me"
-        questions={questions}
         isButtonDisabled={isAddNewUser}
         onClick={handleClick}
       />
