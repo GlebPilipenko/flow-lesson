@@ -2,6 +2,7 @@ import {plusUserCount} from 'store/actions';
 
 const initState = {
   count: 0,
+  questions: {isSamurai: true},
 };
 
 type InitStateType = typeof initState;
@@ -12,7 +13,7 @@ export const usersCountReducer = (state: InitStateType = initState, action: Acti
     case 'PLUS_USER_COUNT':
       return {
         ...state,
-        count: state.count + 1
+        count: state.count + 1,
       };
     default:
       return state;

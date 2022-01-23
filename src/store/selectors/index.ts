@@ -1,2 +1,2 @@
 export {selectUsers} from './selectUsers';
-export {selectUsersCount} from './selectUsersCount';
+export {selectUsersCount, selectQuestions} from './selectUsersCount';
