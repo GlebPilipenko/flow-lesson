@@ -6,8 +6,7 @@ import {v1} from 'uuid';
 import {CustomButton, UsersCountValue} from 'components';
 import {UsersList} from 'components/UsersList';
 import {generateRandomName} from 'utils';
-
-type SetTimeoutType = ReturnType<typeof setTimeout>;
+import {SetTimeoutType} from 'types';
 
 const DELAY = 500;
 
